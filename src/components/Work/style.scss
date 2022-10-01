@@ -1,0 +1,169 @@
+@use '../../assets/scss' as *;
+
+.work {
+  margin-top: 240px;
+
+  @include mobile {
+    margin-top: 149px;
+  }
+
+  &__title {
+    color: $white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 80.9309px;
+    line-height: 98px;
+
+    @include mobile {
+      font-size: 34.5808px;
+      line-height: 42px;
+    }
+  }
+
+  &__card-container {
+    margin-top: 96px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      margin-top: 56px;
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+  }
+
+  &__show-all-btn {
+    margin-top: 34px;
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    border: 2px solid $white;
+    padding: 12px 30px;
+
+    color: $white;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+
+  @include mobile {
+    overflow: visible;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(100% + 15px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 81px;
+      height: 4px;
+      background-color: $white;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &:hover &__content {
+    display: block;
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    padding: 36px 94px 34px 68px;
+    color: $black;
+    background-color: $white;
+    animation: slideUp 0.5s ease forwards;
+
+    @include mobile {
+      display: block;
+      padding: 10px 10px 14px 18px;
+      width: 228px;
+      max-width: 100%;
+      animation: none;
+      transform: translate(0, -100%);
+
+      &.left {
+        right: unset;
+      }
+
+      &.right {
+        left: unset;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 54px;
+
+    @include mobile {
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  &__desc {
+    margin-top: 12px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+
+    @include mobile {
+      margin-top: 4px;
+      font-size: 6px;
+      line-height: 7px;
+    }
+  }
+
+  &__view-btn {
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+
+    @include mobile {
+      display: none;
+    }
+
+    span {
+      margin-right: 10px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    svg {
+      width: 30px;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -100%);
+  }
+}

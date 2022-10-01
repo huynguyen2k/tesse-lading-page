@@ -1,0 +1,97 @@
+@use '../../assets/scss/' as *;
+
+.contact {
+  margin-top: 316px;
+  color: $white;
+
+  @include mobile {
+    margin-top: 148px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 1090px;
+    max-width: 100%;
+
+    @include mobile {
+      width: 283px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 80.9309px;
+    line-height: 98px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 34.5808px;
+      line-height: 42px;
+    }
+  }
+
+  &__email {
+    margin-top: 56px;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+
+    @include mobile {
+      margin-top: 38px;
+      font-size: 21.6264px;
+      line-height: 26px;
+    }
+  }
+
+  &__phone-number {
+    margin-top: 13px;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+
+    @include mobile {
+      margin-top: 6px;
+      font-size: 21.6264px;
+      line-height: 26px;
+    }
+  }
+}
+
+.social-list {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: repeat(6, fit-content(100%));
+  justify-content: space-between;
+
+  @include mobile {
+    margin-top: 38px;
+    row-gap: 13px;
+    grid-template-columns: repeat(3, fit-content(100%));
+  }
+
+  &__item {
+    @include mobile {
+      &:nth-child(2) {
+        grid-area: 2 / 1 / span 1 / span 1;
+      }
+
+      &:nth-child(4) {
+        grid-area: 1 / 2 / span 1 / span 1;
+      }
+    }
+  }
+
+  &__link {
+    color: $light-gray;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+
+    @include mobile {
+      font-size: 17px;
+      line-height: 21px;
+    }
+  }
+}

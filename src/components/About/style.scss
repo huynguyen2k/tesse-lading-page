@@ -1,0 +1,47 @@
+@use '../../assets/scss' as *;
+
+.about {
+  margin-top: 230px;
+
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    width: 1190px;
+    max-width: 100%;
+
+    font-weight: 600;
+    font-size: 162.959px;
+    line-height: 134px;
+    text-align: center;
+    color: $white;
+
+    @include mobile {
+      width: 323px;
+      font-size: 50px;
+      line-height: 92.52%;
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    width: 1100px;
+    max-width: 100%;
+
+    margin-top: 56px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: $gray;
+
+    @include mobile {
+      width: 294px;
+      margin-top: 33px;
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+}

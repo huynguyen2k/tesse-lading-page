@@ -1,0 +1,100 @@
+@use '../../assets/scss' as *;
+
+.header {
+  color: $white;
+
+  @include mobile {
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+
+      width: 100%;
+      height: 97px;
+      background-color: $black;
+    }
+  }
+
+  &__container {
+    padding: 66px 91px 0 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mobile {
+      padding: 40px 36px 0 44px;
+    }
+  }
+
+  &__logo-link {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+
+    @include mobile {
+      font-weight: 600;
+      font-size: 13.2495px;
+      line-height: 16px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      display: none;
+
+      &.mobile-active {
+        position: fixed;
+        top: 97px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        border-top: 1px solid $white;
+        background-color: $black;
+      }
+    }
+  }
+
+  &__nav-item {
+    & + & {
+      margin-left: 87px;
+
+      @include mobile {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    @include mobile {
+      display: block;
+      padding: 21px 38px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: right;
+    }
+  }
+
+  &__menu-icon,
+  &__close-icon {
+    display: none;
+    width: 24px;
+    height: 24px;
+
+    @include mobile {
+      display: block;
+    }
+  }
+}

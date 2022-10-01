@@ -1,0 +1,6 @@
+@use './assets/scss/' as *;
+
+.app {
+  min-height: 100vh;
+  background-color: $black;
+}
